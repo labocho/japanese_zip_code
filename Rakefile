@@ -12,13 +12,15 @@ end
 require 'rake'
 
 require 'jeweler'
+require "#{File.dirname(__FILE__)}/lib/japanese_zip_code/version"
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "japanese_zip_code"
+  gem.version = JapaneseZipCode::VERSION
   gem.homepage = "http://github.com/labocho/japanese_zip_code"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Ruby on Rails plugin to store and lookup japanese zip code}
+  gem.description = %Q{japanese_zip_code is Ruby on Rails plugin to store and lookup japanese zip code and associated address.}
   gem.email = "labocho@penguinlab.jp"
   gem.authors = ["labocho"]
   # dependencies defined in Gemfile

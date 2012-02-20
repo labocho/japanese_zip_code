@@ -46,3 +46,7 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+data/
+spec/dummy/db/*.sqlite3
+spec/dummy/log/
