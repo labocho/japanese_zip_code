@@ -4,7 +4,7 @@ require "tempfile"
 module JapaneseZipCode
   module Updater
     SOURCE_URL = "http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
-    SOURCE = File.expand_path "#{File.dirname(__FILE__)}/../../data/japanese_zip_code/KEN_ALL.csv"
+    SOURCE = File.expand_path "#{File.dirname(__FILE__)}/../../data/japanese_zip_code/KEN_ALL.CSV"
 
     def self.update_csv(url = SOURCE_URL)
       raise "`curl` not found!" unless system("which curl", out: "/dev/null")
