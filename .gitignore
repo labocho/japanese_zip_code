@@ -47,6 +47,6 @@ pkg
 # For rubinius:
 #*.rbc
 
-data/
+data/japanese_zip_code/KEN_ALL.CSV
 spec/dummy/db/*.sqlite3
 spec/dummy/log/
