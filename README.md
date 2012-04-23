@@ -21,18 +21,18 @@ and enter command below.
 
 # Usage
 
-    JapaneseZipCode::ZipCode.lookup("060-0000")
+    JapaneseZipCode::ZipCode.lookup("064-0941")
     # #<JapaneseZipCode::ZipCode
-    #   id: 1,
+    #   id: 2,
     #   organization_code: "01101",
     #   prefecture: "北海道",
     #   city: "札幌市中央区",
-    #   street: "以下に掲載がない場合",
-    #   zip: "0600000",
-    #   zip5: "060  ",
-    #   prefecture_phonetic: "ﾎｯｶｲﾄﾞｳ",
-    #   city_phonetix: "ｻｯﾎﾟﾛｼﾁｭｳｵｳｸ"
-    #   street_phonetic: "ｲｶﾆｹｲｻｲｶﾞﾅｲﾊﾞｱｲ"
+    #   street: "旭ケ丘",
+    #   zip: "0640941",
+    #   zip5: "064",
+    #   prefecture_phonetic: "ホッカイドウ",
+    #   city_phonetix: "サッポロシチュウオウク"
+    #   street_phonetic: "アサヒガオカ"
     # ...
     # >
 

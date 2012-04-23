@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require "csv"
 require "tempfile"
 
@@ -6,7 +7,8 @@ module JapaneseZipCode
     SOURCE_URL = "http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
     SOURCE = File.expand_path "#{File.dirname(__FILE__)}/../../data/japanese_zip_code/KEN_ALL.CSV"
 
-    def self.update_csv(url = SOURCE_URL)
+    module_function
+    def update_csv(url = SOURCE_URL)
       raise "`curl` not found!" unless system("which curl", out: "/dev/null")
       raise "`unzip` not found!" unless system("which unzip", out: "/dev/null")
 
@@ -22,7 +24,7 @@ module JapaneseZipCode
       end
     end
 
-    def self.update_table(csv = SOURCE)
+    def update_table(csv = SOURCE)
       raise "Zip code source file not found: #{csv}" unless File.exists?(csv)
 
       # テーブルを空にする
@@ -44,14 +46,14 @@ module JapaneseZipCode
       CSV.foreach(csv, csv_options) do |row|
         zip_code = ZipCode.new(
           organization_code: row[0],
-          zip5: row[1],
+          zip5: row[1].strip,
           zip: row[2],
-          prefecture_phonetic: row[3],
-          city_phonetic: row[4],
-          street_phonetic: row[5],
-          prefecture: row[6],
-          city: row[7],
-          street: row[8],
+          prefecture_phonetic: normalize(row[3]),
+          city_phonetic: normalize(row[4]),
+          street_phonetic: normalize(filter_street(row[5])),
+          prefecture: normalize(row[6]),
+          city: normalize(row[7]),
+          street: normalize(filter_street(row[8])),
         )
 
         if zip_code.save
@@ -67,6 +69,16 @@ module JapaneseZipCode
       end
 
       puts "Complete! #{success} success. #{failure} failure."
+    end
+
+    def normalize(str)
+      Charwidth.normalize(str) if str
+    end
+
+    def filter_street(str)
+      return if str == "以下に掲載がない場合"
+      return if str == "ｲｶﾆｹｲｻｲｶﾞﾅｲﾊﾞｱｲ"
+      str
     end
   end
 end
