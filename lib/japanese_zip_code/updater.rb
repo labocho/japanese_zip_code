@@ -1,6 +1,7 @@
 # encoding: UTF-8
 require "csv"
 require "tempfile"
+require "charwidth"
 
 module JapaneseZipCode
   module Updater
