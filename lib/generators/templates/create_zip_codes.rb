@@ -36,7 +36,7 @@ class CreateZipCodes < ActiveRecord::Migration
       # t.integer :update, :limit => 1, :null => false
       # t.integer :update_reason, :limit => 1, :null => false
 
-      t.timestamps
+      t.timestamps null: false
     end
 
     add_index :zip_codes, :organization_code
