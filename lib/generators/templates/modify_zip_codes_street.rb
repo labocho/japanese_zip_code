@@ -5,8 +5,8 @@ class ModifyZipCodesStreet < ActiveRecord::Migration
     change_column :zip_codes, :street_phonetic, :text
   end
 
-  def down
-    change_column :zip_codes, :street, :string
-    change_column :zip_codes, :street_phonetic, :string
-  end
+  # def down
+  #   change_column :zip_codes, :street, :string
+  #   change_column :zip_codes, :street_phonetic, :string
+  # end
 end
