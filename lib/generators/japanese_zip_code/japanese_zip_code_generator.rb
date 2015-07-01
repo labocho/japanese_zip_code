@@ -6,7 +6,8 @@ module JapaneseZipCode
     source_root File.expand_path "#{File.dirname(__FILE__)}/../templates"
 
     def create_migration_file
-      migration_template "create_zip_codes.rb", "db/migrate/create_zip_codes"
+      migration_template "create_zip_codes.rb", "db/migrate/create_zip_codes.rb"
+      migration_template "modify_zip_code_street.rb", "db/migrate/modify_zip_code_street.rb"
     end
 
     def self.next_migration_number(dirname)
