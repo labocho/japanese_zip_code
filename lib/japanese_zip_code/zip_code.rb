@@ -2,7 +2,7 @@ require "active_record"
 # 郵便番号で町名が一意に決まらない場合(col13==1、 col10==1)は、 street と street_rubi は NULL
 module JapaneseZipCode
   class ZipCode < ActiveRecord::Base
-    attr_accessible :organization_code, :zip5, :zip, :prefecture_phonetic, :city_phonetic, :street_phonetic, :prefecture, :city, :street
+    #attr_accessible :organization_code, :zip5, :zip, :prefecture_phonetic, :city_phonetic, :street_phonetic, :prefecture, :city, :street
     validates_presence_of :zip, :prefecture_phonetic, :city_phonetic, :prefecture, :city
 
     def self.lookup(zip)
