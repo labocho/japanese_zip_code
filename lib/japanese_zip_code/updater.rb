@@ -5,7 +5,7 @@ require "charwidth"
 
 module JapaneseZipCode
   module Updater
-    SOURCE_URL = "http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
+    SOURCE_URL = "https://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip"
     SOURCE = File.expand_path "#{File.dirname(__FILE__)}/../../data/japanese_zip_code/KEN_ALL.CSV"
 
     module_function
