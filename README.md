@@ -15,6 +15,10 @@ and enter command below.
     rails generate japanese_zip_code
     rake db:migrate
 
+Add line below to Rakefile or lib/tasks/japanese_zip_code.rake
+
+    require "japanese_zip_code/rake"
+
 # Initialize / Updating
 
     rake japanese_zip_code:update
